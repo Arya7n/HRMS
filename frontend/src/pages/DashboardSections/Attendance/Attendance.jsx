@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../../api/axios";
+import axios from "axios";
 import "./Attendance.css";
 import Mail from "./../../../../public/Images/Mail.png";
 import Notifications from "./../../../../public/Images/Notifications.png";
@@ -19,7 +19,7 @@ const Attendance = () => {
   };
 
   const fetchAttendance = async () => {
-    const res = await api.get("/candidate/attendance/list");
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/candidate/attendance/list`);
     setAttendanceData(res.data);
   };
 
@@ -28,7 +28,7 @@ const Attendance = () => {
   }, []);
 
   const handleStatusChange = async (id, newStatus) => {
-    await api.patch(`/candidate/attendance/update/${id}`, {
+    await axios.patch(`${import.meta.env.VITE_API_BASE_URL}/candidate/attendance/update/${id}`, {
       status: newStatus,
     });
     fetchAttendance();

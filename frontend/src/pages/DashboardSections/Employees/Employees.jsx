@@ -19,7 +19,7 @@ const Employee = () => {
   };
 
   const fetchEmployees = async () => {
-    const res = await api.get("/candidate/employee/list");
+    const res = await api.get(`${import.meta.env.VITE_API_BASE_URL}/candidate/employee/list`);
     setEmployees(res.data);
   };
 
@@ -29,7 +29,7 @@ const Employee = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this employee?")) {
-      await api.delete(`/candidate/employee/delete/${id}`);
+      await api.delete(`${import.meta.env.VITE_API_BASE_URL}/candidate/employee/delete/${id}`);
       fetchEmployees();
     }
   };
@@ -45,7 +45,7 @@ const Employee = () => {
 
   const handleSave = async () => {
     await api.patch(
-      `/candidate/employee/update/${editData.candidateId}`,
+      `${import.meta.env.VITE_API_BASE_URL}/candidate/employee/update/${editData.candidateId}`,
       editData
     );
     setShowEditModal(false);

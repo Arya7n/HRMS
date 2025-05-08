@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Candidates.css";
 import CandidateTable from "./CandidateTable";
 import CandidateForm from "./CandidateForm";
-import api from "../../../api/axios";
+import axios from "axios";
 import Mail from "./../../../../public/Images/Mail.png";
 import Notifications from "./../../../../public/Images/Notifications.png";
 import Profile from "./../../../../public/Images/Profile.png";
@@ -22,7 +22,7 @@ const Candidates = () => {
 
   const fetchCandidates = async () => {
     try {
-      const res = await api.get("/candidate/list");
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/candidate/list`);
       const data = res.data.map((c) => ({
         id: c._id,
         name: c.fullName,
@@ -56,7 +56,7 @@ const Candidates = () => {
 
     console.log("Form data to be sent:", formData);
     try {
-      await api.post("/candidate/add", formData, {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/candidate/add`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -71,7 +71,7 @@ const Candidates = () => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await api.patch(`/candidate/status/${id}`, { status: newStatus });
+      await axios.patch(`${import.meta.env.VITE_API_BASE_URL}/candidate/status/${id}`, { status: newStatus });
       fetchCandidates();
     } catch (err) {
       console.error("Status update failed", err);
@@ -93,7 +93,7 @@ const Candidates = () => {
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`/candidate/delete/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/candidate/delete/${id}`);
       fetchCandidates();
     } catch (err) {
       console.error("Error deleting candidate", err);

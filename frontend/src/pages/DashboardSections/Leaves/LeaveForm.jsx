@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import api from "../../../api/axios";
+import axios from "axios";
 import "./LeaveForm.css";
 
 const LeaveForm = ({ onClose, onSubmit }) => {
@@ -14,7 +14,7 @@ const LeaveForm = ({ onClose, onSubmit }) => {
   });
 
   useEffect(() => {
-    api.get("/candidate/attendance/list").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/candidate/attendance/list`).then((res) => {
       const presentEmployees = res.data.filter((e) => e.status === "Present");
       setEmployees(presentEmployees);
     });
@@ -49,7 +49,7 @@ const LeaveForm = ({ onClose, onSubmit }) => {
     e.preventDefault();
     const data = new FormData();
     Object.entries(formData).forEach(([key, val]) => data.append(key, val));
-    await api.post("/leave/add", data, {
+    await axios.post(`${import.meta.env.VITE_API_BASE_URL}/leave/add`, data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

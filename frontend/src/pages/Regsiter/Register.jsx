@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "./../../api/axios";
+import axios from "axios";
 import "./Register.css";
 import dashboardPreview from "../../../public/Images/dashboardPreview.png";
 import HiddenPass from "../../../public/Images/HiddenPass.png";
@@ -18,7 +18,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/auth/register", {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/register`, {
         fullName,
         email,
         password,

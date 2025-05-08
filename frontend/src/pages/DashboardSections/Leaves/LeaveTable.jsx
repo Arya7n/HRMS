@@ -1,15 +1,15 @@
 import React from "react";
-import api from "../../../api/axios";
+import axios from "axios";
 import "./LeaveTable.css";
 
 const LeaveTable = ({ data, refresh, statusFilter, searchText }) => {
   const handleStatusChange = async (id, status) => {
-    await api.patch(`/leave/status/${id}`, { status });
+    await axios.patch(`${import.meta.env.VITE_API_BASE_URL}/leave/status/${id}`, { status });
      window.location.reload();
   };
 
   const handleDownload = (file) => {
-    if (file) window.open(`http://localhost:3000/${file}`, "_blank");
+    if (file) window.open(`${import.meta.env.VITE_API_BASE_URL}/${file}`, "_blank");
   };
 
   // Apply filters before rendering

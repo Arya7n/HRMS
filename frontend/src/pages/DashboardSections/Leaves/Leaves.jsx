@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import LeaveForm from "./LeaveForm";
 import LeaveTable from "./LeaveTable";
 import LeaveCalendar from "./LeaveCalendar";
-import api from "../../../api/axios";
+import axios from "axios";
 import "./Leaves.css";
 import Mail from "./../../../../public/Images/Mail.png";
 import Notifications from "./../../../../public/Images/Notifications.png";
@@ -23,12 +23,12 @@ const Leaves = () => {
   };
 
   const fetchLeaves = async () => {
-    const res = await api.get("/leave/list");
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/leave/list`);
     setLeaves(res.data);
   };
 
   const fetchCalendar = async () => {
-    const res = await api.get("/leave/calendar");
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/leave/calendar`);
     setCalendarData(res.data);
   };
 

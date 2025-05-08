@@ -15,7 +15,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/auth/login", { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, { email, password });
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard/candidates");
     } catch (error) {
