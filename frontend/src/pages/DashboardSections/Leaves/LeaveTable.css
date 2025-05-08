@@ -1,0 +1,97 @@
+.leave-table-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: calc(100vh - 200px); /* Adjust based on your header height */
+}
+
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.leave-table-title-row th {
+  background-color: #460878 ;
+  color: white;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 12px;
+  font-family: 'Inter', sans-serif;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.leave-table thead tr:nth-child(2) {
+  background-color: #460878;
+}
+
+.leave-table th {
+  color: white;
+  font-weight: 300;
+  text-align: left;
+  padding: 12px;
+}
+
+.leave-table td {
+  padding: 12px;
+}
+
+.leave-table tr:last-child td {
+  border-bottom: none;
+}
+
+.leave-table select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.leave-table button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.leave-table-doc-btn {
+  color: #2c5282;
+  font-size: 18px;
+}
+
+.leave-status-dropdown.approved {
+  color: #2ECC71;
+  font-weight: 300;
+}
+
+.leave-status-dropdown.rejected {
+  color: #E74C3C;
+  font-weight: 300;
+}
+
+.leave-status-dropdown.pending {
+  color: #F1C40F;
+  font-weight: 300;
+}
+
+.leave-table-name-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.leave-name {
+  font-weight: 500;
+  color: #1A202C;
+  font-size: 14px;
+}
+
+.leave-department {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+

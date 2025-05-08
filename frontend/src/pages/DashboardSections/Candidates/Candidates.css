@@ -1,0 +1,110 @@
+
+
+.candidates-container {
+  padding: 5px;
+  max-width: 100%;
+}
+
+/* ===== Header Section ===== */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* ===== Profile Dropdown ===== */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.arrow-down {
+  font-size: 18px;
+  margin-left: 4px;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  width: 180px;
+  z-index: 100;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* ===== Filters Row ===== */
+.filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.filters-left,
+.filters-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filters-left select,
+.filters-right input {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* ===== Add Button ===== */
+.add-btn {
+  background-color: #460878;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}

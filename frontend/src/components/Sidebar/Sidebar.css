@@ -1,0 +1,169 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Toggle Button (mobile only) */
+.sidebar-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background-color: #460878;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+  transition: left 0.3s ease;
+}
+
+/* Logo */
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 30px 0px;
+}
+
+.logo-box {
+  width: 24px;
+  height: 24px;
+  border: 5px solid #460878;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  color: #460878;
+  font-size: 28px;
+}
+
+/* Search */
+.search-bar {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Groups */
+.sidebar-group {
+  margin-bottom: 20px;
+}
+
+.group-title {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Sidebar Item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.sidebar-item span {
+  margin-right: 8px;
+}
+
+.sidebar-item:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar-item.active {
+  color: #6a0dad;
+  font-weight: bold;
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.main-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    border-right: none;
+    border-bottom: none;
+    background-color: white;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    padding-top: 60px; /* prevent overlap with toggle */
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* .group-title {
+    display:;
+  } */
+
+  .sidebar-item {
+    padding: 10px;
+    font-size: 0.9rem;
+    justify-content: start;
+  }
+}

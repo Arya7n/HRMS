@@ -1,0 +1,178 @@
+.leave-form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.leave-form-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 700px;
+  max-width: 95%;
+  padding: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.leave-form-title-bar {
+  background-color: #460878;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.leave-form-close-btn {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.leave-form {
+  padding: 24px;
+}
+
+.leave-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.leave-input-group {
+  position: relative;
+  width: 100%;
+}
+
+.leave-input-field,
+.leave-textarea-field {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 14px 12px 6px;
+  background: white;
+}
+
+.leave-input-group input[placeholder=" "]::placeholder,
+.leave-textarea-field::placeholder {
+  color: transparent;
+}
+
+.leave-input-field:focus,
+.leave-textarea-field:focus {
+  border-color: #460878;
+}
+
+.leave-textarea-field {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.leave-floating-label {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  font-size: 14px;
+  color: #888;
+  background: white;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.leave-floating-label.active {
+  top: -8px;
+  left: 10px;
+  font-size: 13px;
+  color: #460878;
+}
+
+.leave-required {
+  color: red;
+}
+
+.leave-input-group input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.leave-file-wrapper {
+  position: relative;
+  height: 44px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px 0 12px;
+}
+
+.leave-upload-icon {
+  position: absolute;
+  right: 12px;
+  font-size: 18px;
+  color: #460878;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leave-file-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  background-color: #f1f1f1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.leave-file-remove {
+  color: red;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.leave-form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.leave-form-actions button {
+  padding: 10px 32px;
+  border: none;
+  border-radius: 999px;
+  background-color: #460878;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.full-width {
+  grid-column: 1 / 3;
+}
+
+@media (max-width: 768px) {
+  .leave-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

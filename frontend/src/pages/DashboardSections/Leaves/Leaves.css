@@ -1,0 +1,230 @@
+/* === Leaves Header Styles === */
+.leaves-header-section {
+  margin-bottom: 20px;
+}
+
+.leaves-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leaves-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.leaves-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.leaves-header-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.leaves-profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.leaves-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.leaves-profile-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.leaves-dropdown-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.leaves-dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* === Filter Row Styles === */
+.leaves-filters-row {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.leaves-filters-left,
+.leaves-filters-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.leaves-filters-left select,
+.leaves-search-input {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* === Add Leave Button === */
+.leaves-add-btn {
+  padding: 10px 20px;
+  background-color: #460878;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.leaves-add-btn:hover {
+  background-color: #1a365d;
+}
+
+/* === Main Content Section === */
+.leave-content {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* === Left Section: Leave Table === */
+.leave-left {
+  flex: 2;
+  background: #ffffff;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+  min-height: calc(100vh - 220px); /* Adjust for full height view */
+}
+
+/* === Right Section: Leave Calendar === */
+.leave-right {
+  flex: 1;
+  background-color: white; /* ✅ white container background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.leave-calendar-header {
+  background-color: #460878;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.leave-calendar-wrapper {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+.react-calendar {
+  border: none;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+/* Dot with count */
+.leave-calendar-dot {
+  font-size: 12px;
+  background-color: #460878;
+  color: white;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* Approved Leaves List */
+.leave-approved-section {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 4px;
+}
+
+.leave-approved-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #460878;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.leave-approved-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leave-approved-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.leave-approved-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.leave-approved-name{
+  font-size: 14px;
+  font-weight: 500;
+  color: #1A202C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leave-approved-date {
+  font-size: 12px;
+  color: #555;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.leave-approved-role {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
